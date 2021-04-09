@@ -10,13 +10,14 @@ import {
     Button
 } from 'react-native';
 
-const Screen1 = ({ navigation, route }) => (
+const a = ({ navigation, route }) => (
     <View style={styles.screen}>
         <Text style={styles.title}>Screen 1</Text>
         <Button
             title="Go to Screen 2"
             onPress={() => {
-                navigation.push('Screen2')
+                console.log(JSON.stringify(route))
+                navigation.push('SecondPage')
             }}
         />
     </View>
@@ -33,4 +34,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Screen1
+export default a
