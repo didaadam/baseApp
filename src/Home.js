@@ -10,14 +10,18 @@ import {
     Button
 } from 'react-native';
 
-const a = ({ navigation, route }) => (
+const Home = ({ navigation, route }) => (
     <View style={styles.screen}>
-        <Text style={styles.title}>Screen 1</Text>
+        <StatusBar
+            animated={true}
+            backgroundColor="#5b9af5"
+        />
+        <Text style={styles.title}>Simply Calc</Text>
         <Button
-            title="Go to Screen 2"
+            title="Start App"
+            color={'#5b9af5'}
             onPress={() => {
-                console.log(JSON.stringify(route))
-                navigation.push('SecondPage')
+                navigation.push('Calc')
             }}
         />
     </View>
@@ -25,13 +29,17 @@ const a = ({ navigation, route }) => (
 
 const styles = StyleSheet.create({
     screen: {
-        marginTop: 40,
+        // marginTop: 40,
         alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+        backgroundColor: '#d9e7fc'
     },
     title: {
         padding: 20,
         fontSize: 42,
+        color: 'black'
     },
 })
 
-export default a
+export default Home
